@@ -1,40 +1,30 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
-<CodeBlocks_project_file>
-	<FileVersion major="1" minor="6" />
-	<Project>
-		<Option title="sum_from_to" />
-		<Option pch_mode="2" />
-		<Option compiler="gcc" />
-		<Build>
-			<Target title="Debug">
-				<Option output="bin/Debug/sum_from_to" prefix_auto="1" extension_auto="1" />
-				<Option object_output="obj/Debug/" />
-				<Option type="1" />
-				<Option compiler="gcc" />
-				<Compiler>
-					<Add option="-g" />
-				</Compiler>
-			</Target>
-			<Target title="Release">
-				<Option output="bin/Release/sum_from_to" prefix_auto="1" extension_auto="1" />
-				<Option object_output="obj/Release/" />
-				<Option type="1" />
-				<Option compiler="gcc" />
-				<Compiler>
-					<Add option="-O2" />
-				</Compiler>
-				<Linker>
-					<Add option="-s" />
-				</Linker>
-			</Target>
-		</Build>
-		<Compiler>
-			<Add option="-Wall" />
-			<Add option="-fexceptions" />
-		</Compiler>
-		<Unit filename="main.cpp" />
-		<Extensions>
-			<lib_finder disable_auto="1" />
-		</Extensions>
-	</Project>
-</CodeBlocks_project_file>
+#include <iostream>
+using namespace std;
+
+// Function to calculate the sum of all integers between first and last
+int sum_from_to(int first, int last) {
+    int sum = 0;
+
+    for (int i = first; i <= last; i++) {
+        sum += i;  // Add each number between first and last to sum
+    }
+
+    return sum;  // Return the total sum
+}
+
+int main() {
+    int first, last;
+
+    // Ask the user for the first and last numbers
+    cout << "Enter the first number: ";
+    cin >> first;
+    cout << "Enter the last number: ";
+    cin >> last;
+
+    // Call the sum_from_to function and print the result
+    int result = sum_from_to(first, last);
+    cout << "The sum of all integers between " << first << " and " << last << " is: " << result << endl;
+
+    return 0;
+}
+
